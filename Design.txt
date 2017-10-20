@@ -1,0 +1,81 @@
+監視機能
+	CheckEventLog.ps1
+
+	10分ごとにイベントログを読んで、異常があればメールする。
+
+	エラー通知
+		通知先メアド指定
+		基本全部
+		スルーイベント指定
+
+	警告通知
+		監視有効指定
+		通知先メアド指定
+		基本スルー
+		通知イベント指定
+
+	情報通知
+		監視有効指定
+		通知先メアド指定
+		基本スルー
+		通知イベント指定
+
+	アプリケーションログの指定方法考える
+		ノード属性なのでCSVに入れる必要あり
+		マルチバリューをどうやって格納する?
+			CSV にタイプを書いて、実データーはconfigに書くか
+		そもそもチェックする/しないのコントロールをどう実装するか
+			指定があったらチェック。無かったらスキップ
+
+ログクリーンナップ機能
+	RemoveExecLog.ps1
+	保存期間を過ぎたログ(*.log)を削除
+
+スクリプト更新機能
+	update.ps1
+		cd $G_RootPath
+		git pull $C_ProjectRepository
+
+		cd $G_CommonPath
+		git pull $C_CommonRepository
+
+展開機能
+
+設定情報
+	全プロジェクト共通設定
+		CommonConfig.ps1
+
+	固有設定
+		プロジェクト共通設定
+			ProjectConfig.ps1
+				プロジェクト名
+				メール宛先
+					エラー
+					警告
+					情報
+				個別トラップ
+					警告
+					情報
+
+		ノード固有設定
+			NodeConfig.ps1
+				役割
+				メールサーバー
+				cname
+				チェックするアプリケーションログ名
+識別情報
+	ServerIdentificationInformation.CSV
+	IPアドレス
+	ホスト名
+	CNAME
+	役割
+	メールサーバー
+	チェックするアプリケーションログ名
+
+	IPAddress,
+	HostName,
+	CNAME,
+	Role,
+	MailServer,
+	CheckAPLogName
+	IsAPServer
