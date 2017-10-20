@@ -92,7 +92,7 @@ if( -not(($ScheduleStatus[4] -match "準備完了") -or ($ScheduleStatus[4] -mat
 
 
 ## プロジェクト 情報更新
-$env:path += ";C:\Program Files (x86)\Git\bin"
+$env:path += ";C:\Program Files\Git\bin"
 $env:home = $G_RootPath
 
 cd $G_RootPath

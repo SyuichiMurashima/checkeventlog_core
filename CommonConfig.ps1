@@ -126,7 +126,7 @@ $C_ServerInformation = Join-Path $G_ProjectPath "HostRole.csv"
 
 ### リポジトリー
 # 共通リポジトリ
-$C_CommonRepository = "git@bitbucket.org:gloops-system/checkeventlog_core.git"
+$C_CommonRepository = "git@github.com:SyuichiMurashima/checkeventlog_core.git"
 
 
 ### インストール先
